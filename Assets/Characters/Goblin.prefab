@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -3849127101775952226, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
@@ -77,17 +81,28 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 977492468783751975}
+      addedObject: {fileID: 551162957727651709}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5517902264375043395}
     - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8767279960998370427}
+    - targetCorrespondingSourceObject: {fileID: -927199367670048503, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7223785117913035900}
   m_SourcePrefab: {fileID: 100100000, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
+--- !u!4 &664052003916300769 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
+  m_PrefabInstance: {fileID: 5498221187278891771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4570157599844447218 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
   m_PrefabInstance: {fileID: 5498221187278891771}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &977492468783751975
+--- !u!114 &551162957727651709
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,12 +111,35 @@ MonoBehaviour:
   m_GameObject: {fileID: 4570157599844447218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c2a8ee85d515c343a70e9b80700c61a, type: 3}
+  m_Script: {fileID: 11500000, guid: 763231427d3dfd34c86825c94069eac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hp: 2
+  maxHp: 100
+  curHp: 5
+  AnimatorController: {fileID: 7475179364339281051}
+  healtToBuff: 2
+--- !u!114 &5517902264375043395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570157599844447218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bec7ad9da2988a0409b8da528653e663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _searchLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  _overlapStartPoint: {fileID: 664052003916300769}
+  _offset: {x: 0, y: 70, z: 70}
+  _sphereRadius: 70
+  _gizmosColor: {r: 0, g: 0.0867033, b: 1, a: 1}
   Damage: 1
   AtackSpeed: 1
+  AttackRange: 2
   AnimatorController: {fileID: 7475179364339281051}
   Agent: {fileID: 8767279960998370427}
 --- !u!195 &8767279960998370427
@@ -126,6 +164,29 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &7223785117913035900
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4570157599844447218}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 25.137342
+  m_Height: 134.884
+  m_Direction: 1
+  m_Center: {x: 0, y: 62.759174, z: -0.69177556}
 --- !u!95 &7475179364339281051 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: cb01db2707aa97a4e94efee03de71f52, type: 3}
